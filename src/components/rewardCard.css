@@ -1,0 +1,259 @@
+/* =========================
+   REWARD CARD
+========================= */
+
+.reward-card {
+  width: 100%;
+  max-width: 245px;
+
+  background: #300400;
+
+  border: 2px solid #c79518;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+  transition: all 0.3s ease;
+}
+
+.reward-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.reward-image {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  background:
+    radial-gradient(
+      circle,
+      #650900 0%,
+      #3b0300 50%,
+      #210000 100%
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.reward-image img {
+  width: 88%;
+  height: 88%;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.reward-card:hover .reward-image img {
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   FREE BADGE
+========================= */
+
+.free-badge {
+  position: absolute;
+
+  right: 8px;
+  bottom: 10px;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: #ff6b20;
+
+  border: 2px solid #ffd27a;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transform: rotate(-8deg);
+
+  color: white;
+
+  line-height: 1;
+}
+
+.free-badge span {
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.free-badge strong {
+  font-size: 13px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.reward-content {
+  min-height: 48px;
+
+  padding: 5px;
+
+  text-align: center;
+
+  background: #420500;
+}
+
+.reward-content h3 {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: white;
+
+  font-weight: 700;
+}
+
+.reward-quantity {
+  color: white;
+
+  font-size: 20px;
+
+  font-weight: 900;
+
+  line-height: 1.1;
+}
+
+
+/* =========================
+   COLLECT BUTTON
+========================= */
+
+.collect-button {
+  width: 100%;
+
+  border: none;
+  border-top: 2px solid #b98912;
+
+  padding: 9px 5px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffd51a 0%,
+      #e5ad00 100%
+    );
+
+  color: #111;
+
+  font-size: 22px;
+
+  font-family:
+    "Arial Narrow",
+    Arial,
+    sans-serif;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.collect-button:hover {
+  background: #ffea35;
+
+  letter-spacing: 1px;
+}
+
+.collect-button:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .reward-card {
+    max-width: none;
+
+    border-width: 1px;
+  }
+
+  .reward-content {
+    min-height: 40px;
+  }
+
+  .reward-content h3 {
+    font-size: 11px;
+  }
+
+  .reward-quantity {
+    font-size: 17px;
+  }
+
+  .collect-button {
+    padding: 6px 3px;
+
+    font-size: 18px;
+  }
+
+  .free-badge {
+    width: 42px;
+    height: 42px;
+
+    right: 5px;
+    bottom: 5px;
+  }
+
+  .free-badge span {
+    font-size: 8px;
+  }
+
+  .free-badge strong {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL PHONE
+========================= */
+
+@media (max-width: 360px) {
+
+  .reward-content h3 {
+    font-size: 10px;
+  }
+
+  .reward-quantity {
+    font-size: 15px;
+  }
+
+  .collect-button {
+    font-size: 16px;
+  }
+
+  .free-badge {
+    width: 38px;
+    height: 38px;
+  }
+}

@@ -1,0 +1,46 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  width: 100%;
+  overflow: hidden;
+  background: #d88900;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .hero-image {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+  }
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-image {
+    width: 100%;
+    height: auto;
+    min-height: 220px;
+    object-fit: cover;
+  }
+}

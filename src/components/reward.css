@@ -1,0 +1,90 @@
+.rewards {
+  min-height: 600px;
+
+  padding: 70px 20px 100px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #ffd35a 0%,
+      #e99900 45%,
+      #d47c00 100%
+    );
+}
+
+
+/* Heading */
+
+.event-heading {
+  display: inline-block;
+
+  padding: 8px 30px;
+
+  background: #6d1d04;
+
+  border-top: 3px solid #a54a14;
+  border-bottom: 3px solid #a54a14;
+
+  color: white;
+
+  font-size: 24px;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.rewards h2 {
+  margin: 5px 0 20px;
+
+  color: white;
+
+  font-size: 28px;
+
+  font-weight: 900;
+}
+
+
+/* Cards */
+
+.reward-container {
+  width: min(520px, 90%);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+
+  align-items: start;
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+  .rewards {
+    padding: 45px 10px 80px;
+  }
+
+  .event-heading {
+    padding: 7px 15px;
+
+    font-size: 15px;
+  }
+
+  .rewards h2 {
+    font-size: 21px;
+  }
+
+  .reward-container {
+    width: 90%;
+
+    gap: 8px;
+  }
+}

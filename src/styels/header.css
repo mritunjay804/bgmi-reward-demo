@@ -1,0 +1,251 @@
+/* =========================
+   HEADER
+========================= */
+
+.main-header {
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  background: #050505;
+  color: #fff;
+
+  border-bottom: 2px solid #222;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.brand {
+  width: 42%;
+
+  padding-left: 25px;
+
+  font-family: Impact, "Arial Narrow", sans-serif;
+  line-height: 1;
+}
+
+.brand-title {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.brand-subtitle {
+  display: flex;
+  align-items: center;
+
+  margin-top: 5px;
+
+  font-size: 21px;
+  letter-spacing: 2px;
+}
+
+.brand-subtitle span {
+  background: #fff;
+  color: #050505;
+
+  padding: 3px 8px;
+
+  margin-right: 6px;
+}
+
+.brand-subtitle strong {
+  font-weight: 900;
+}
+
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.social-icons {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 55px;
+}
+
+.social-icons a {
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 25px;
+
+  transition: 0.25s ease;
+}
+
+.social-icons a:hover {
+  color: #dca300;
+  transform: scale(1.1);
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu-button {
+  width: 90px;
+  height: 90px;
+
+  border: none;
+
+  background: #dca000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.menu-button i {
+  color: #111;
+  font-size: 43px;
+}
+
+.menu-button:hover {
+  background: #f2b400;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .main-header {
+    height: 75px;
+  }
+
+  .brand {
+    width: 45%;
+    padding-left: 18px;
+  }
+
+  .brand-title {
+    font-size: 22px;
+  }
+
+  .brand-subtitle {
+    font-size: 16px;
+    margin-top: 3px;
+  }
+
+  .brand-subtitle span {
+    padding: 2px 6px;
+  }
+
+  .social-icons {
+    gap: 30px;
+  }
+
+  .social-icons a {
+    font-size: 21px;
+  }
+
+  .menu-button {
+    width: 75px;
+    height: 75px;
+  }
+
+  .menu-button i {
+    font-size: 36px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .main-header {
+    height: 65px;
+  }
+
+  .brand {
+    width: auto;
+    flex: 1;
+
+    padding-left: 10px;
+  }
+
+  .brand-title {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .brand-subtitle {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .brand-subtitle span {
+    padding: 2px 4px;
+    margin-right: 4px;
+  }
+
+  .social-icons {
+    flex: none;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .social-icons a {
+    font-size: 17px;
+  }
+
+  .menu-button {
+    width: 62px;
+    height: 65px;
+  }
+
+  .menu-button i {
+    font-size: 32px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+  .brand-title {
+    font-size: 14px;
+  }
+
+  .brand-subtitle {
+    font-size: 10px;
+  }
+
+  .social-icons {
+    gap: 10px;
+    padding: 0 7px;
+  }
+
+  .social-icons a {
+    font-size: 15px;
+  }
+
+  .menu-button {
+    width: 55px;
+  }
+
+  .menu-button i {
+    font-size: 28px;
+  }
+}

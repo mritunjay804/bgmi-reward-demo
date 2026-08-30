@@ -1,0 +1,167 @@
+.countdown-section {
+  width: 94%;
+  margin: 0 auto;
+
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 20px;
+
+  background: linear-gradient(
+    90deg,
+    #ffb300,
+    #ffc107,
+    #ffb000
+  );
+
+  border-top: 3px solid #ffe9a3;
+  border-bottom: 3px solid #ffe9a3;
+
+  color: #111;
+
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-weight: 900;
+}
+
+
+/* LEFT */
+
+.countdown-left {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: clamp(18px, 2.5vw, 30px);
+}
+
+.countdown-left i {
+  font-size: 32px;
+}
+
+
+/* RIGHT */
+
+.countdown-right {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  font-family: monospace;
+
+  font-size: clamp(20px, 2.8vw, 32px);
+
+  font-weight: 900;
+}
+
+.countdown-right i {
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+.countdown-right b {
+  font-weight: 900;
+}
+
+
+/* EXPIRED */
+
+.event-expired {
+  font-size: clamp(18px, 2.5vw, 30px);
+  font-weight: 900;
+}
+
+
+/* TABLET */
+
+@media (max-width: 768px) {
+
+  .countdown-section {
+    width: 94%;
+    min-height: 60px;
+
+    padding: 7px 12px;
+  }
+
+  .countdown-left {
+    font-size: 17px;
+    gap: 5px;
+  }
+
+  .countdown-left i {
+    font-size: 23px;
+  }
+
+  .countdown-right {
+    font-size: 19px;
+    gap: 3px;
+  }
+
+  .countdown-right i {
+    font-size: 21px;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+  .countdown-section {
+    width: 94%;
+    min-height: 55px;
+
+    padding: 6px 8px;
+  }
+
+  .countdown-left {
+    font-size: 12px;
+    gap: 3px;
+    white-space: nowrap;
+  }
+
+  .countdown-left i {
+    font-size: 18px;
+  }
+
+  .countdown-right {
+    font-size: 14px;
+    gap: 2px;
+    white-space: nowrap;
+  }
+
+  .countdown-right i {
+    font-size: 17px;
+    margin-right: 2px;
+  }
+
+  .event-expired {
+    font-size: 14px;
+  }
+}
+
+
+/* 360px */
+
+@media (max-width: 360px) {
+
+  .countdown-left {
+    font-size: 10px;
+  }
+
+  .countdown-left i {
+    font-size: 15px;
+  }
+
+  .countdown-right {
+    font-size: 12px;
+  }
+
+  .countdown-right i {
+    font-size: 14px;
+  }
+}
