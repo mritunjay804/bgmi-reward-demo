@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./accountVerification.css";
 
-export function AccountVerification({ reward, onSubmit }) {
+function AccountVerification({ reward, onSubmit }) {
   const [playerId, setPlayerId] = useState("");
   const [phone, setPhone] = useState("");
   const [accountLevel, setAccountLevel] = useState("");
@@ -91,3 +91,4 @@ export function AccountVerification({ reward, onSubmit }) {
     </section>
   );
 }
+export default AccountVerification;

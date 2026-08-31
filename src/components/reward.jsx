@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./reward.css";
 
 import { DemoLogin } from "./demologin";
-import { AccountVerification } from "../pages/accountVerification";
+// import { AccountVerification } from "../pages/accountVerification";
+import AccountVerification from "../pages/accountVerification";
 
 import RewardCard from "./rewardCard";
 import { RewardConfirmation } from "./RewardConfirmation";
