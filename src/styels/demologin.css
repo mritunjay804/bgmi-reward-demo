@@ -1,245 +1,269 @@
-/* =========================
-   DEMO LOGIN
-========================= */
-
-.demo-login {
-  min-height: 650px;
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  padding: 30px 15px;
-
-  background:
-    radial-gradient(
-      circle at center,
-      #f8bd4a,
-      #d67a00 55%,
-      #9a4700
-    );
+  background: rgba(0, 0, 0, 0.65);
 }
 
+.login-modal {
+  width: 740px;
+  max-width: 95%;
+  max-height: 95vh;
 
-/* =========================
-   LOGIN BOX
-========================= */
-
-.login-box {
-  width: 100%;
-  max-width: 720px;
-
-  background: #292929;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.65);
+  background: white;
+  border-radius: 14px;
 
   overflow: hidden;
+
+  color: #111;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
+/* Header */
 
-/* =========================
-   BANNER
-========================= */
-
-.login-banner {
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio: 16 / 7;
-
-  overflow: hidden;
-}
-
-.login-banner img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-.login-logo {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  text-align: center;
-
-  color: white;
-
-  font-size: clamp(25px, 5vw, 45px);
-
-  font-weight: 900;
-
-  text-shadow:
-    2px 2px 5px black;
-}
-
-.login-logo span {
-  display: block;
-
-  font-size: 0.55em;
-
-  letter-spacing: 5px;
-}
-
-
-/* =========================
-   SOCIAL BUTTONS
-========================= */
-
-.social-buttons {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 10px;
-
-  padding: 25px 25px 10px;
-}
-
-.social-btn {
-  min-height: 55px;
+.login-header {
+  height: 84px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
 
-  gap: 12px;
+  padding: 0 28px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.x-logo {
+  font-size: 38px;
+  margin-right: 20px;
+}
+
+.login-header h2 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.close-login {
+  margin-left: auto;
 
   border: none;
+  background: transparent;
 
-  font-size: 20px;
-
-  font-weight: 800;
+  font-size: 42px;
+  line-height: 1;
 
   cursor: pointer;
-
-  transition: 0.2s ease;
 }
 
-.social-btn i {
-  font-size: 25px;
+/* Body */
+
+.login-body {
+  padding: 50px 52px 35px;
 }
 
-.social-btn:hover {
-  transform: translateY(-3px);
+.login-body h1 {
+  margin: 0 0 40px;
 
-  box-shadow:
-    0 5px 12px rgba(0, 0, 0, 0.4);
+  font-size: 32px;
+  line-height: 1.25;
 }
 
-.x-btn {
-  background: white;
-  color: #111;
+/* App */
+
+.app-info {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 38px;
 }
 
-.facebook-btn {
-  background: #1877f2;
-  color: white;
+.app-icon {
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 22px;
+
+  background: #ff8a00;
+  border-radius: 24px;
+
+  font-size: 50px;
 }
 
-.google-btn {
-  background: #ffc400;
-  color: #111;
+.app-info h3 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+  font-weight: 500;
+
+  color: #777;
 }
 
+.app-info p {
+  margin: 0 0 4px;
 
-/* =========================
-   DEMO NOTICE
-========================= */
-
-.demo-notice {
-  text-align: center;
-
-  padding: 10px 20px;
-
-  color: #d8d8d8;
-
-  font-size: 14px;
+  font-size: 18px;
+  color: #777;
 }
 
-.demo-notice p {
-  margin: 5px;
+.app-info span {
+  font-size: 17px;
+  color: #777;
 }
 
+/* Inputs */
 
-/* =========================
-   CONTINUE
-========================= */
-
-.login-continue {
+.login-body label {
   display: block;
 
-  width: 220px;
+  margin-bottom: 10px;
 
-  margin: 15px auto 30px;
+  font-size: 17px;
+  font-weight: 700;
+}
 
-  padding: 12px;
+.username-input,
+.password-wrapper input {
+  width: 100%;
+  height: 62px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #999;
+  border-radius: 6px;
+
+  padding: 0 18px;
+
+  font-size: 18px;
+}
+
+.username-input {
+  margin-bottom: 20px;
+}
+
+/* Password */
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 160px;
+}
+
+.password-wrapper input:disabled {
+  background: white;
+  color: #777;
+  opacity: 1;
+}
+
+.password-wrapper span {
+  position: absolute;
+
+  right: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: green;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.security-note {
+  margin: 5px 0 38px;
+
+  color: #777;
+  font-size: 15px;
+}
+
+/* Continue */
+
+.continue-button {
+  width: 100%;
+  height: 66px;
 
   border: none;
+  border-radius: 35px;
 
-  background:
-    linear-gradient(
-      #ffe51a,
-      #e5ad00
-    );
+  background: #ffc107;
 
   color: #111;
 
   font-size: 24px;
-
-  font-weight: 900;
+  font-weight: 700;
 
   cursor: pointer;
-
-  transition: 0.2s ease;
 }
 
-.login-continue:hover {
-  background: #fff000;
-
-  transform: scale(1.03);
+.continue-button:hover {
+  background: #ffb300;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* Mobile */
 
 @media (max-width: 600px) {
 
-  .demo-login {
-    min-height: 550px;
+  .login-modal {
+    width: 95%;
+    max-height: 92vh;
 
-    padding: 15px 10px;
+    overflow-y: auto;
   }
 
-  .social-buttons {
-    grid-template-columns: 1fr;
-
-    padding: 20px 15px 5px;
-
-    gap: 8px;
+  .login-header {
+    height: 65px;
+    padding: 0 18px;
   }
 
-  .social-btn {
-    min-height: 50px;
-
-    font-size: 18px;
+  .x-logo {
+    font-size: 30px;
+    margin-right: 12px;
   }
 
-  .login-continue {
-    width: 200px;
-
+  .login-header h2 {
     font-size: 21px;
   }
 
-  .demo-notice {
-    font-size: 12px;
+  .close-login {
+    font-size: 34px;
+  }
+
+  .login-body {
+    padding: 30px 20px;
+  }
+
+  .login-body h1 {
+    font-size: 23px;
+    margin-bottom: 30px;
+  }
+
+  .app-icon {
+    width: 75px;
+    height: 75px;
+    font-size: 38px;
+  }
+
+  .app-info h3 {
+    font-size: 22px;
+  }
+
+  .app-info p,
+  .app-info span {
+    font-size: 14px;
+  }
+
+  .password-wrapper span {
+    font-size: 14px;
+    right: 12px;
   }
 }

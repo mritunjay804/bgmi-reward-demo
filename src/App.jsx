@@ -1,16 +1,24 @@
-import { Countdown } from "./components/countdown";
-import { Header } from "./components/header";
-import { Hero } from "./components/hero";
-import { Rewards } from "./components/reward";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { Home } from "./pages/home";
+import { AdminDashboard } from "./pages/AdminDashboard";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Hero />
-      <Countdown />
-      <Rewards />
-    </div>
+    <BrowserRouter>
+      <Routes>
+
+        {/* Home */}
+        <Route path="/" element={<Home />} />
+
+        {/* Admin */}
+        <Route
+          path="/admin"
+          element={<AdminDashboard />}
+        />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

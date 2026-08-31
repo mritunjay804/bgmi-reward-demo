@@ -1,50 +1,95 @@
 import "../styels/demologin.css";
-import loginBanner from "../images/login-banner.png";
 
-export function DemoLogin({ onContinue }) {
+export function DemoLogin({ onContinue, onClose }) {
+  const handleContinue = () => {
+    // Demo only — no password is collected
+    onContinue("Demo");
+  };
+
   return (
-    <section className="demo-login">
-      <div className="login-box">
-        {/* Demo Background / Banner */}
-        <div className="login-banner">
-          <img src={loginBanner} alt="Gaming Event" />
+    <div className="login-overlay">
 
-          <div className="login-logo">
-            BATTLEGROUNDS
-            <span>MOBILE INDIA</span>
+      <div className="login-modal">
+
+        {/* Header */}
+        <div className="login-header">
+          <div className="x-logo">𝕏</div>
+
+          <h2>Log in With X</h2>
+
+          <button
+            className="close-login"
+            onClick={onClose}
+          >
+            ×
+          </button>
+        </div>
+
+        {/* Body */}
+        <div className="login-body">
+
+          <h1>
+            Log in to your X account to connect to
+            <br />
+            BGMI MOBILE.
+          </h1>
+
+          {/* App information */}
+          <div className="app-info">
+
+            <div className="app-icon">
+              🎮
+            </div>
+
+            <div>
+              <h3>BGMI MOBILE</h3>
+              <p>WINNER WINNER CHICKEN DINNER!</p>
+              <span>Official Gaming Demo</span>
+            </div>
+
           </div>
-        </div>
 
-        {/* Social Login Buttons */}
-        <div className="social-buttons">
-          <button className="social-btn x-btn" onClick={onContinue}>
-            <i className="bi bi-twitter-x"></i>
-            <span>Twitter</span>
+          {/* Demo username */}
+          <label>Demo X Username</label>
+
+          <input
+            type="text"
+            value="demo_user"
+            readOnly
+            className="username-input"
+          />
+
+          {/* Password - intentionally not collected */}
+          <div className="password-wrapper">
+
+            <input
+              type="password"
+              placeholder="Password"
+              disabled
+            />
+
+            <span>
+              Not collected
+            </span>
+
+          </div>
+
+          <p className="security-note">
+            🔐 Real X passwords are never requested or sent to this website.
+          </p>
+
+          {/* Continue */}
+          <button
+            className="continue-button"
+            onClick={handleContinue}
+          >
+            Continue
           </button>
 
-          <button className="social-btn facebook-btn" onClick={onContinue}>
-            <i className="bi bi-facebook"></i>
-            <span>Facebook</span>
-          </button>
-
-          <button className="social-btn google-btn" onClick={onContinue}>
-            <i className="bi bi-google-play"></i>
-            <span>Gplay</span>
-          </button>
         </div>
 
-        {/* Demo Notice */}
-        <div className="demo-notice">
-          <p>This is a demonstration login.</p>
-
-          <p>No real account credentials are collected.</p>
-        </div>
-
-        {/* Continue */}
-        <button className="login-continue" onClick={onContinue}>
-          Continue
-        </button>
       </div>
-    </section>
+
+    </div>
   );
 }

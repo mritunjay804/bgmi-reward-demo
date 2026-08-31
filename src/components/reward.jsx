@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./reward.css";
 
 import { DemoLogin } from "./demologin";
+import { AccountVerification } from "../pages/accountVerification";
+
 import RewardCard from "./rewardCard";
 import { RewardConfirmation } from "./RewardConfirmation";
 
@@ -9,35 +11,52 @@ import reward1 from "../images/reward1.png";
 import reward2 from "../images/reward2.png";
 
 export function Rewards() {
-  // Selected reward
   const [selectedReward, setSelectedReward] = useState(null);
-
-  // Login screen
   const [showLogin, setShowLogin] = useState(false);
+  const [showVerification, setShowVerification] = useState(false);
 
-  // When Collect button is clicked
+  // Collect button
   const handleCollect = (reward) => {
     setSelectedReward(reward);
   };
 
-  // Close confirmation modal
+  // Close confirmation
   const closeModal = () => {
     setSelectedReward(null);
   };
 
-  // Confirm reward
+  // Confirmation → Demo Login
   const confirmReward = () => {
-    setSelectedReward(null);
     setShowLogin(true);
   };
 
-  // Show demo login
+  // Demo Login → Verification
+  const handleLoginContinue = (provider) => {
+    console.log("Demo login provider:", provider);
+
+    setShowLogin(false);
+    setShowVerification(true);
+  };
+
+  // Verification page
+  if (showVerification) {
+    return (
+      <AccountVerification
+        reward={selectedReward}
+        onComplete={() => {
+          console.log("Verification completed");
+          setSelectedReward(null);
+          setShowVerification(false);
+        }}
+      />
+    );
+  }
+
+  // Demo Login page
   if (showLogin) {
     return (
       <DemoLogin
-        onContinue={() => {
-          console.log("Continue to demo verification");
-        }}
+        onContinue={handleLoginContinue}
       />
     );
   }
@@ -45,14 +64,12 @@ export function Rewards() {
   return (
     <section className="rewards">
 
-      {/* Event Heading */}
       <div className="event-heading">
         LIMITED TIME EVENT HURRY
       </div>
 
       <h2>UP!</h2>
 
-      {/* Reward Cards */}
       <div className="reward-container">
 
         <RewardCard
@@ -72,7 +89,6 @@ export function Rewards() {
 
       </div>
 
-      {/* Confirmation Modal */}
       <RewardConfirmation
         reward={selectedReward}
         onClose={closeModal}
